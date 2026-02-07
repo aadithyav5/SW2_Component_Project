@@ -1,8 +1,8 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Aadithya Raj Vinoth Raj
+- **Dot Number**: vinothraj.1
+- **Due Date**: 2/6/2026
 
 ## Assignment Overview
 
@@ -211,44 +211,50 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: FrequencyCounter<T>
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Counts occurrences of items
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void increment(T item)
+    - int remove(T item)
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - T mostFrequent()
+    - Map<T, Integer> asMap()
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes because its state changes as items are incremented or removed. Since it extends Standard, methods such as clear, newInstance, and transferFrom necessarily mutate the state of the component
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. It would likely rely on an internal mapping structure, such as Map<T, Integer> or Map.Pair<T, Integer>, to associate each item with its frequency count
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No. This component does not require any enums or constants, as its behavior is fully determined by the items being counted and their frequencies.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. All secondary methods can be implemented using the kernel methods. For example, the mostFrequent method can be implemented by iterating through the internal representation created through repeated calls to increment and selecting the item with the largest count. asMap can be implemented by constructing a map that reflects the current state maintained by the kernel operations.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: ActivityLog
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Tracks timestamped user events such as website usage and other actions
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void record(Event e)
+    - Event removeOldest()
+    - int size()
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - Sequence<Event> eventsInRange(Time a, Time b)
+    - Map<EventType, Integer> frequencyReport()
+    - void purgeOlderThan(Time t)
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes because logs can grow and shrink
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Event and time
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - EventType
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
       - <!-- TODO: provide an argument then delete this comment -->
